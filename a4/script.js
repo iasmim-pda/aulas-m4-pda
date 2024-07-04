@@ -41,3 +41,4 @@ async function pegarPokemon(nomeDoPokemon) {
 }
 
 console.log(pegarPokemon("pokemonquenaoexiste"));
+console.log(pegarPokemon("pikachu"));
