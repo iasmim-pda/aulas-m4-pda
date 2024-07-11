@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { pegaTodosOslivros } from "../../controllers/book.controller.js";
+import { pegaTodosOslivros } from "../controllers/book.controller.js";
 
 //2. declaro o nome da minhan rota, pra facilitar, eu escrevi rotaDeLivros
 const rotaDeLivros = Router();

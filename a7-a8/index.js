@@ -7,15 +7,14 @@
  */
 
 import express from "express";
-import { rotaDeLivros } from "./bookRouter.js";
-
+import { rotaDeLivros } from "./src/routes/book.routes.js";
 const app = express();
 
 //Eu tenho que dizer pra minha aplicação TODA (app), que existem rotas
 // O ultimo passo para usar uma rota, é definir ela no app.js
 app.use(rotaDeLivros);
 // app.use(rotaDeUsuarios)
-app.use(rotaDeAutores)
+//app.use(rotaDeAutores)
 
 app.listen(4000, () => {
 	console.log("http://localhost:4000/");
