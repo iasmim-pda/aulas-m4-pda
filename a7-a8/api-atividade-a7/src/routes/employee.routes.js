@@ -8,9 +8,12 @@
 import { Router } from "express";
 //2. importa controller
 import { getAllEmployees } from "../controllers/getAllEmployees.controller.js";
+import { createNewEmployee } from "../controllers/createNewEmployee.controller.js";
 
 const rotaFuncionarios = Router();
 
 rotaFuncionarios.get("/", getAllEmployees);
+
+rotaFuncionarios.post("/novo-funcionario", createNewEmployee);
 
 export { rotaFuncionarios };
