@@ -6,7 +6,11 @@ const app = express();
 
 const PORT = 3003;
 
+//MIDDLEWARE
 app.use(express.json());
+//MODICA TODAS AS REQUISICOES DO APP
+
+//ROTAS DO SERVIDOR
 app.use(rotaFuncionarios);
 app.use(rotaEnderecos);
 
