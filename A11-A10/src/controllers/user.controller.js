@@ -12,6 +12,7 @@ export const createUser = (req, res) => {
 
 	const newUser = req.body;
 
+	//passando pela model
 	const dadoFormartado = new User(
 		newUser.name,
 		newUser.email,
@@ -21,7 +22,7 @@ export const createUser = (req, res) => {
   //quero salvar o dado, o que vou fazer?
   //1. importo meu banco de dados (nesse caso é ficticio)
 
-  // salvando o dado no meu banco de dados fake
+  // salvando o dado no meu banco de dados fake/simulado
   users.push(dadoFormartado)
 
   res.status(201).send(`O usuário ${dadoFormartado.name} foi criado com sucesso!`)
