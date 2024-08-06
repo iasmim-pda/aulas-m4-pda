@@ -1,0 +1,51 @@
+components:
+  schemas:
+    Vet:
+      type: object
+      required:
+        - nome
+        - idade
+    User:
+      type: object
+      required:
+        - nome
+        - idade
+    Pet:
+      type: object
+      required:
+        - nome
+        - idade
+        - raca
+      properties:
+        id:
+          type: integer
+          description: Id do Pet, gerado automaticamente
+        nome:
+          type: string
+          description: Nome do Pet
+        idade:
+          type: integer
+          description: Idade do Pet
+        raca:
+          type: string
+          description: Raça
+      example:
+        id: 1
+        nome: Rex
+        idade: 1
+        raca: Labrador
+
+paths:
+  /pets/all:
+    get:
+      summary: Endpoint responsável por listar todos os pets
+      tags: [Pets]
+      responses:
+        200:
+          description: Lista de todos os pets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Pet"
