@@ -2,10 +2,20 @@ import express from "express";
 import sequelize from "./src/database/config.js";
 import { petRouter } from "./src/routes/pet.routes.js";
 import { setupSwagger } from "./src/doc/swaggerConfig.js";
+import cors from "cors"; // Import the cors package
 
-const app = express();
+export const app = express();
 
 app.use(express.json());
+
+const corsOptions = {
+  origin: ['http://example.com', 'http://anotherdomain.com'], // Allow multiple origins
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow specific HTTP methods
+  credentials: true, // Allow cookies to be sent
+  optionsSuccessStatus: 204 // Some legacy browsers choke on 204
+};
+
+app.use(cors(corsOptions)); // Use the cors middleware with the specified options
 
 app.use(petRouter);
 
